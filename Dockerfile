@@ -12,7 +12,7 @@ USER app
 
 # Install Python dependencies
 ADD Pipfile Pipfile.lock ./
-RUN pipenv install
+RUN pipenv instal
 
 # Add the project
 ADD setup.py ./

@@ -2,16 +2,6 @@ version: '3'
 
 services:
 
-  web:
-    labels:
-      shipyard.route: '/'
-    build: '.'
-    depends_on:
-      - postgres
-      - redis
-    ports:
-      - '8080:8080'
-
   postgres:
     image: 'postgres:9.6-alpine'
     environment:
@@ -22,6 +12,16 @@ services:
 
   redis:
     image: 'redis:4-alpine'
+
+  web:
+    labels:
+      shipyard.route: '/'
+    build: '.'
+    depends_on:
+      - postgres
+      - redis
+    ports:
+      - '8080:8080'
 
 volumes:
   postgres:
