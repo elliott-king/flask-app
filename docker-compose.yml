@@ -5,6 +5,7 @@ services:
   web:
     labels:
       shipyard.route: '/'
+      shipyard.before: 'ls /'
     build: '.'
     depends_on:
       - postgres
