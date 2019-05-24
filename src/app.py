@@ -6,4 +6,4 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    return 'This is a pull request!'
+    return '<html><body>This is a pull request!</body></html>'
