@@ -1,5 +1,8 @@
 FROM python:3.6-alpine3.6
 
+ARG SECRET_KEY=fakekey
+RUN echo "SECRET_KEY = $SECRET_KEY"
+
 WORKDIR /srv
 
 # Install pipenv
