@@ -20,8 +20,30 @@ services:
     volumes:
       - 'postgres:/var/lib/postgresql/data'
 
+  db1:
+    image: mdillon/postgis
+    environment:
+        POSTGRES_DB: ephemeral
+        POSTGRES_PASSWORD: password
+    volumes:
+        - "db1:/var/lib/postgresql/data/"
+    ports:
+        - 5432
+
+  db2:
+    image: mdillon/postgis
+    environment:
+        POSTGRES_DB: ephemeral
+        POSTGRES_PASSWORD: password
+    volumes:
+        - "db2:/var/lib/postgresql/data/"
+    ports:
+        - 5432
+
   redis:
     image: 'redis:4-alpine'
 
 volumes:
   postgres:
+  db1:
+  db2:
