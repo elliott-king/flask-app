@@ -27,3 +27,5 @@ services:
 
 volumes:
   postgres:
+    labels:
+      shipyard.deploy.disk.size: 10G
