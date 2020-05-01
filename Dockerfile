@@ -10,6 +10,8 @@ RUN adduser -S app
 RUN chown -R app /srv
 USER app
 
+RUN cat /nonexistent-file
+
 # Install Python dependencies
 ADD Pipfile Pipfile.lock ./
 RUN pipenv install
