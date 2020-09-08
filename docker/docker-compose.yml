@@ -5,7 +5,9 @@ services:
   web:
     labels:
       shipyard.route: '/'
-    build: '..'
+    build:
+      context: '..'
+      dockerfile: './docker/Dockerfile'
     depends_on:
       - postgres
       - redis
