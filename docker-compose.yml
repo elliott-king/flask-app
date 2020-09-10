@@ -5,6 +5,7 @@ services:
   web:
     labels:
       shipyard.route: '/'
+      shipyard.before: 'echo this && echo that'
     build: '.'
     depends_on:
       - postgres
