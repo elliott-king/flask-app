@@ -12,6 +12,11 @@ services:
     ports:
       - '8080:8080'
 
+  worker_service:
+    build: '.'
+    depends_on:
+      - web_service
+
   postgres:
     image: 'postgres:9.6-alpine'
     environment:
