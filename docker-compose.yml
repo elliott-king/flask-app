@@ -6,6 +6,7 @@ services:
     labels:
       shipyard.route: '/'
     build: '.'
+    env_file: 'environments/dev.env'
     depends_on:
       - postgres
       - redis
@@ -14,6 +15,8 @@ services:
 
   worker_service:
     build: '.'
+    env_file:
+      - 'environments/dev.env'
     depends_on:
       - web_service
 
