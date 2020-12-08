@@ -4,7 +4,8 @@ services:
 
   web:
     labels:
-      shipyard.route: '/'
+      shipyard.route: '/web'
+      shipyard.route.rewrite: 'true'
     build: '.'
     depends_on:
       - postgres
