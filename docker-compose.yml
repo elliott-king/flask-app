@@ -4,6 +4,7 @@ services:
 
   web:
     labels:
+      shipyard.init: 'python src/wait.py'
       shipyard.route: '/'
     build: '.'
     depends_on:
