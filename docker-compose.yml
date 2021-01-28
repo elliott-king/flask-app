@@ -5,7 +5,6 @@ services:
   web:
     labels:
       shipyard.route: '/'
-    command: RUN  while :; do echo 'Hit CTRL+C'; sleep 1; done
     build: '.'
     depends_on:
       - postgres
@@ -14,6 +13,8 @@ services:
       - '8080:8080'
 
   postgres:
+    labels: 
+      shipyard.init:  while :; do echo 'Hit CTRL+C'; sleep 1; done
     image: 'postgres:9.6-alpine'
     environment:
       POSTGRES_USER: 'postgres'
