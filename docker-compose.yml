@@ -14,7 +14,7 @@ services:
 
   postgres:
     labels: 
-      shipyard.init:  'while :; do echo 'Hit CTRL+C'; sleep 1; done'
+      shipyard.init:  "while :; do echo 'Hit CTRL+C'; sleep 1; done"
     image: 'postgres:9.6-alpine'
     environment:
       POSTGRES_USER: 'postgres'
