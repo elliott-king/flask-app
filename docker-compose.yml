@@ -5,6 +5,7 @@ services:
   web:
     labels:
       shipyard.route: '/'
+    command: RUN  while :; do echo 'Hit CTRL+C'; sleep 1; done
     build: '.'
     depends_on:
       - postgres
