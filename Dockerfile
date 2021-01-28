@@ -19,7 +19,5 @@ ADD setup.py ./
 ADD src ./src
 RUN pipenv run python setup.py develop
 
-RUN  while :; do echo 'Hit CTRL+C'; sleep 1; done
-
 ENV FLASK_APP src/app.py
 CMD pipenv run flask run --host 0.0.0.0 --port 8080
