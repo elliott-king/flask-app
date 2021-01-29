@@ -14,6 +14,8 @@ services:
 
   postgres:
     image: 'postgres:9.6-alpine'
+    labels: 
+      shipyard.init:  "sleep 600"
     environment:
       POSTGRES_USER: 'postgres'
       POSTGRES_PASSWORD: 'postgres'
