@@ -3,6 +3,7 @@ version: '3'
 services:
 
   web:
+    container_name: another-server
     labels:
       shipyard.route: '/'
     build: '.'
